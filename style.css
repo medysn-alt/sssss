@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #100307;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero {
+    background: radial-gradient(ellipse at center, #4a091b 0%, #21040d 45%, #100307 80%);
+}
+
+h1 {
+    font-size: clamp(36px, 7vw, 65px);
+    color: #ff4265;
+    margin-bottom: 25px;
+    text-shadow: 0 0 25px #9c1235;
+}
+
+h2 {
+    color: #ff5270;
+    margin-bottom: 22px;
+    font-size: 28px;
+}
+
+p {
+    max-width: 680px;
+    color: #ead8df;
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 22px;
+}
+
+.heart {
+    color: #ff3155;
+    font-size: 75px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 35px #ff1748;
+    animation: pulse 1.6s infinite;
+}
+
+.subtitle {
+    color: #d6a7b6;
+    letter-spacing: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.card {
+    max-width: 750px;
+    width: 100%;
+    padding: 35px 25px;
+    background: rgba(48, 8, 22, 0.65);
+    border: 1px solid #6e2039;
+    border-radius: 22px;
+    box-shadow: 0 0 35px rgba(128, 0, 38, 0.12);
+    backdrop-filter: blur(8px);
+}
+
+button {
+    background: #b8143c;
+    border: 1px solid #ff5877;
+    color: white;
+    border-radius: 30px;
+    padding: 14px 26px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background: #ed2853;
+    box-shadow: 0 0 25px #9f173b;
+    transform: translateY(-2px);
+}
+
+.music-button {
+    position: fixed;
+    top: 18px;
+    right: 15px;
+    z-index: 10;
+    background: #310814;
+    font-size: 13px;
+    padding: 11px 16px;
+}
+
+.divider {
+    width: 65px;
+    height: 2px;
+    background: #ff4265;
+    margin: 0 auto 28px;
+    box-shadow: 0 0 12px #ff4265;
+}
+
+.final {
+    background: radial-gradient(ellipse at center, #490b20, #100307 70%);
+}
+
+#finalMessage {
+    display: none;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -40px;
+    color: #ff4265;
+    pointer-events: none;
+    z-index: 0;
+    animation: rise 8s linear forwards;
+    opacity: 0.7;
+}
+
+section > * {
+    z-index: 1;
+}
+
+footer {
+    background: #100307;
+    padding: 25px;
+    color: #a77b8a;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-115vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        padding: 28px 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
